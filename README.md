@@ -22,4 +22,32 @@ To run the project, follow these steps:
 ### 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/Spam-Message-Detector.git
+git clone https://github.com/yourusername/Spam-Message-Detector.git 
+```
+### 2. **Compile the code:**
+
+```bash
+g++ DSAproj.cpp -o DSAproj
+```
+### 3. **Run the program:**
+
+```bash
+./DSAproj
+```
+
+## Files:
+DSAproj.cpp: Main source code for the spam detector.
+README.md: Project documentation (this file).
+
+## Example Usage:
+```bash
+Enter sender email (or type 'exit' to quit): spam@example.com
+Enter full email message (type 'END' on a new line to finish):
+Congratulations, you've won a free lottery ticket!
+END
+Result: Spam
+```
+
+##Credits:
+Course: Data Structures and Algorithms (CS250)
+University: NUST SEECS
