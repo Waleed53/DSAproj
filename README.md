@@ -36,8 +36,9 @@ g++ DSAproj.cpp -o DSAproj
 ```
 
 ## Files:
-DSAproj.cpp: Main source code for the spam detector.
-README.md: Project documentation (this file).
+- DSAproj.cpp: Main source code for the spam detector.
+- README.md: Project documentation (this file).
+
 
 ## Example Usage:
 ```bash
@@ -48,6 +49,6 @@ END
 Result: Spam
 ```
 
-##Credits:
+## Credits:
 Course: Data Structures and Algorithms (CS250)
 University: NUST SEECS
