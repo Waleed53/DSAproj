@@ -37,17 +37,13 @@ g++ DSAproj.cpp -o DSAproj
 
 ## Files:
 - DSAproj.cpp: Main source code for the spam detector.
+- DSAprojGUI.py: Frontend using Python
 - README.md: Project documentation (this file).
 
 
 ## Example Usage:
-```bash
-Enter sender email (or type 'exit' to quit): spam@example.com
-Enter full email message (type 'END' on a new line to finish):
-Congratulations, you've won a free lottery ticket!
-END
-Result: Spam
-```
+![alt text](DSAresult.png)
+
 
 ## Credits:
 Course: Data Structures and Algorithms (CS250)
