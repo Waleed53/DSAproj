@@ -42,6 +42,10 @@ g++ DSAproj.cpp -o DSAproj
 
 
 ## Example Usage:
+'''
+g++ -fPIC -shared DSAproj.cpp -o libspamdetector.so
+python DSAprojGUI.py
+'''
 ![alt text](DSAresult.png)
 
 
