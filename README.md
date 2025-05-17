@@ -27,12 +27,12 @@ git clone https://github.com/yourusername/Spam-Message-Detector.git
 ### 2. **Compile the code:**
 
 ```bash
-g++ DSAproj.cpp -o DSAproj
+g++ -fPIC -shared DSAproj.cpp -o libspamdetector.so
 ```
 ### 3. **Run the program:**
 
 ```bash
-./DSAproj
+python DSAprojGUI.py
 ```
 
 ## Files:
@@ -42,10 +42,6 @@ g++ DSAproj.cpp -o DSAproj
 
 
 ## Example Usage:
-'''
-g++ -fPIC -shared DSAproj.cpp -o libspamdetector.so
-python DSAprojGUI.py
-'''
 ![alt text](DSAresult.png)
 
 
