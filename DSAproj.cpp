@@ -3,6 +3,7 @@
 #include <string>
 #include <cstring>
 #include <map>
+#include <cctype>
 using namespace std;
 
 class TrieNode {
@@ -135,57 +136,38 @@ public:
         }
 
         if (blacklistedSenders.find(sender) != blacklistedSenders.end()) {
-            cout << "[Auto-Detected] Blacklisted sender detected." << endl;
             return "Spam";
         }
 
         if (isSpamKeywordPresent(message)) {
-            cout << "[Auto-Detected] Suspicious keywords found in message." << endl;
             return "Spam";
         }
 
         return "Not Spam";
     }
 
-    void learnFromUser(const string& sender, const string& message) {
+    void learnFromUser(const string& sender, const string& message, bool isSpam) {
         string key = sender + message;
-        string userResponse;
-
-        cout << "Do you consider this spam? (yes/no): ";
-        getline(cin, userResponse);
-
-        if (userResponse == "yes") {
-            learningMemory[key] = true;
-            cout << "Marked as spam and remembered.\n";
-        } else {
-            learningMemory[key] = false;
-            cout << "Marked as not spam and remembered.\n";
-        }
+        learningMemory[key] = isSpam;
     }
 };
 
-int main() {
-    SpamDetector detector;
-    string sender, message, line;
+SpamDetector detector;
 
-    while (true) {
-        cout << "\nEnter sender email (or type 'exit' to quit): ";
-        getline(cin, sender);
-        if (sender == "exit") break;
+extern "C" {
 
-        cout << "Enter full email message (type 'END' on a new line to finish):\n";
-        message = "";
-        while (getline(cin, line)) {
-            if (line == "END") break;
-            message += line + "\n";
-        }
-
-        string result = detector.checkMessage(sender, message);
-        cout << "Result: " << result << endl;
-
-        detector.learnFromUser(sender, message);
-    }
-
-    return 0;
+const char* check_spam(const char* sender, const char* message) {
+    static string result;
+    result = detector.checkMessage(string(sender), string(message));
+    return result.c_str();
 }
 
+void learn_feedback(const char* sender, const char* message, int isSpam) {
+    detector.learnFromUser(string(sender), string(message), isSpam != 0);
+}
+
+}
+
+int main() {
+    return 0;
+}
