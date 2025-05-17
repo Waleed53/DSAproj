@@ -7,6 +7,7 @@ This project is part of my Data Structures and Algorithms course (CS250) at NUST
 2. **Rabin-Karp Algorithm for String Matching**: The Rabin-Karp algorithm is implemented to perform efficient substring searches for spam keywords in email messages.
 3. **Spam Detection**: The system uses the above techniques to detect spam messages based on content and sender.
 4. **User Feedback System**: If the system is unsure about a message, it asks the user whether they consider it spam and stores this feedback for future reference.
+5. **GUI**: Interactive GUI using tkinter allowing the user to view the result and allow user feedback.
 
 ## How It Works:
 
